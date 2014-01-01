@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>
+    </SchemaVersion>
+    <ProjectGuid>{BB3E562C-D316-4779-ABBD-8325250CEB45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Reference.EIM.Repository</RootNamespace>
+    <AssemblyName>Reference.EIM.Repository</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Repository.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Repository.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Client">
+      <HintPath>..\..\..\..\..\..\..\Program Files\AppFabric 1.1 for Windows Server\Microsoft.ApplicationServer.Caching.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationServer.Caching.Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files\AppFabric 1.1 for Windows Server\Microsoft.ApplicationServer.Caching.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContactRepository.vb" />
+    <Compile Include="ContactReadOnlyRepository.vb" />
+    <Compile Include="GenericRepository.vb" />
+    <Compile Include="Infrastructure\DbContextBuilder.vb" />
+    <Compile Include="Infrastructure\DbContextInitializer.vb" />
+    <Compile Include="Infrastructure\DbContextManager.vb" />
+    <Compile Include="Infrastructure\CachingProviderConfiguration.vb" />
+    <Compile Include="Infrastructure\TracingProviderConfiguration.vb" />
+    <Compile Include="Infrastructure\SimpleDbContextStorage.vb" />
+    <Compile Include="Infrastructure\UnitOfWork.vb" />
+    <Compile Include="Infrastructure\WebDbContextStorage.vb" />
+    <Compile Include="Interfaces\IContactRepository.vb" />
+    <Compile Include="Interfaces\IDbContextBuilder.vb" />
+    <Compile Include="Interfaces\IDbContextStorage.vb" />
+    <Compile Include="Interfaces\IRepository.vb" />
+    <Compile Include="Interfaces\IUnitOfWork.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reference.EIM.Domain\Reference.EIM.Domain.vbproj">
+      <Project>{34F77060-CDBD-45B2-93A4-309B9ACD41D3}</Project>
+      <Name>Reference.EIM.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reference.EIM.Model\Reference.EIM.Model.vbproj">
+      <Project>{E6651320-E7CF-4B1F-BABA-9C247F774B56}</Project>
+      <Name>Reference.EIM.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\C#\EFCachingProvider\EFCachingProvider.csproj">
+      <Project>{e9b10f80-134f-4dc1-ba6f-7728ef2cae58}</Project>
+      <Name>EFCachingProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\C#\EFProviderWrapperToolkit\EFProviderWrapperToolkit.csproj">
+      <Project>{baf62de6-51d0-49ab-9e4e-9240e85e9c35}</Project>
+      <Name>EFProviderWrapperToolkit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\C#\EFTracingProvider\EFTracingProvider.csproj">
+      <Project>{f68d53d8-8926-49cf-b556-df818c3bca40}</Project>
+      <Name>EFTracingProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\EFProvidersWithAppFabric\EFAppFabricCacheAdapter\EFAppFabricCacheAdapter.csproj">
+      <Project>{a7c1fc6d-c1bb-4446-883f-8455fcb4a9f9}</Project>
+      <Name>EFAppFabricCacheAdapter</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
